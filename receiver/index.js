@@ -1,9 +1,11 @@
 "use strict;"
 
 const express = require("express");
+const bodyParser = require('body-parser');
 const fs = require("fs");
 
 const app = express();
+app.use(bodyParser.json());
 
 function streamToFile(inputStream, localFilePath) {
     return new Promise((resolve, reject) => {
