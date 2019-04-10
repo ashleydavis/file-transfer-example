@@ -9,10 +9,10 @@ const fs = require("fs");
 function streamFileToEndPoint(localFilePath, fileUploadUrl) {
     return new Promise((resolve, reject) => {
         const fileInputStream = fs.createReadStream(localFilePath);
-        const httpPutStream = request.put(fileUploadUrl);
-        fileInputStream.pipe(httpPutStream)
+        fileInputStream.pipe(request.put(fileUploadUrl))
             .on("error", reject)
-            .on("finish", resolve);
+            .on("finish", resolve)
+            .on("close", resolve);
     });
 }
 
