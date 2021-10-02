@@ -2,6 +2,8 @@
 
 An example of a streaming binary file transfer from one Node.js application to another via HTTP.
 
+[Click here to support my work](https://www.codecapers.com.au/about#support-my-work)
+
 ## To run
 
 First run the file receiver:
